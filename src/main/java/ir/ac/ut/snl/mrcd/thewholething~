@@ -1,0 +1,6 @@
+#!/bin/bash
+/bin/bash ./stage1
+sh /home/arian/NetBeansProjects/bscthesis2/output/script.sh
+/bin/bash ./stage2
+/bin/bash ./stage3
+/bin/bash ./stage4

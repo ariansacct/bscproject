@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+rm -rf ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagetwotmp
+rm -rf ~/NetBeansProjects/bscthesis2/output/stagetwo
+rm stagetwo.jar
+mkdir ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagetwotmp
+javac -classpath ~/Downloads/hadoop-1.2.1/hadoop-core-1.2.1.jar:commons-lang3-3.3.2.jar *.java -d ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagetwotmp
+jar -cvf stagetwo.jar -C ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagetwotmp .
+~/Downloads/hadoop-1.2.1/bin/hadoop jar stagetwo.jar ir.ac.ut.snl.mrcd.StageTwo ~/NetBeansProjects/bscthesis2/output/stageone ~/NetBeansProjects/bscthesis2/output/stagetwo

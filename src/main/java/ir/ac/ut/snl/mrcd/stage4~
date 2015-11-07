@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+rm -rf /home/arian/Desktop/stagefour
+rm -rf ~/Desktop/shitzzz
+rm stagefour.jar
+mkdir ~/Desktop/stagefour
+javac -classpath ~/Downloads/hadoop-1.2.1/hadoop-core-1.2.1.jar:commons-lang3-3.3.2.jar *.java -d ~/Desktop/stagefour
+jar -cvf stagefour.jar -C ~/Desktop/stagefour .
+~/Downloads/hadoop-1.2.1/bin/hadoop jar stagefour.jar ir.ac.ut.snl.mrcd.StageFour ~/NetBeansProjects/bscthesis/shitxxx ~/Desktop/shitzzz

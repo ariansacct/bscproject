@@ -1,0 +1,9 @@
+#!/bin/bash
+clear
+rm -rf ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagethreetmp
+rm -rf ~/NetBeansProjects/bscthesis2/output/stagethree
+rm stagethree.jar
+mkdir ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagethreetmp
+javac -classpath ~/Downloads/hadoop-1.2.1/hadoop-core-1.2.1.jar:commons-lang3-3.3.2.jar *.java -d ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagethreetmp
+jar -cvf stagethree.jar -C ~/NetBeansProjects/bscthesis2/src/main/java/ir/ac/ut/snl/mrcd/stagethreetmp .
+~/Downloads/hadoop-1.2.1/bin/hadoop jar stagethree.jar ir.ac.ut.snl.mrcd.StageThree ~/NetBeansProjects/bscthesis2/output/stagetwo ~/NetBeansProjects/bscthesis2/output/stagethree

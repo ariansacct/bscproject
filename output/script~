@@ -1,0 +1,5 @@
+
+@echo off
+for /f "delims=" %%a in ('dir "stageone*" /a:d /o:-d /b') do set "folder=%%a"
+echo rd /s /q "%folder%"
+pause
